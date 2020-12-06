@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palla 8</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    
+</head>
+<body style="background: #d1fffe;">
+    
+    <h1 style="text-align: center; border: black 1px solid;">Fammi una domanda e premi la palla per iniziare!</h1>
+    <div style="display: flex; justify-content: center; ">
+        <button type="submit">
+            <img style:="height: 250px; width: 250px;" src="https://i.ebayimg.com/images/g/nfUAAOSwYaFWfC3S/s-l300.jpg" id="call" alt="file not found. Premi lo stesso.">
+        </button>
+    </div>
+    <div style="display: flex; justify-content: center; text-align: center; border: solid black 1px; height: 100px; color: black; background: white; box-shadow: 0 4px 8px rgba(0 , 0, 0, 0.3);">
+        <p id="demo"></p>
+    </div>
+    <div style=" text-align: center;">
+        <p>Contatti:</p> 
+        <p> E-mail: <a href="mailto: vero.riccardo24@gmail.com">vero.riccardo24gmail.com</a></p>
+        <p>Numero di telefono: <bold>340/8751744</bold></p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/riccardo-vero-845a5516b">Vero Riccardo </a></p>
+    </div>
+    <script>
+        var ask = document.getElementById("call");
+var full = document.getElementById("demo");
+
+ask.addEventListener("click", answer);
+var counter = 0;
+
+function answer() {
+    
+    switch (counter) {
+        case 0:
+            document.getElementById("demo").innerHTML = "Salve, sono <bold>Vero Riccardo</bold> e vorrei rubarLe solo un paio di secondi.";
+            counter++;
+            break;
+        case 1:
+            document.getElementById("demo").innerHTML = "Ho lavorato per anni nel campo delle automazioni industriali come operaio metalmeccanico e mi sono reso conto che <bold>l'informatica sta prendendo sempre più spazio</bold>";
+            counter++;
+            break;
+        case 2: 
+            document.getElementById("demo").innerHTML = "Essendo un grande <bold>appassionato di tecnologia</bold> ho deciso di rendere questa passione un <bold>lavoro</bold>";
+            counter++;
+            break;
+        case 3:
+            document.getElementById("demo").innerHTML = "Per questo, da autodidatta ho iniziato a studiare linguaggi di programmazione, in particolare <bold>JAVA</bold>";
+            counter++;
+            break;
+        case 4:
+            document.getElementById("demo").innerHTML = "Sono <bold>motivato</bold>, ho <bold>voglia di imparare</bold>, sono predisposto a <bold>lavorare in team</bold>, non ho problemi di orario o smartworking e sono molto abile nel <bold>problem solving</bold>";
+            counter++;
+            break;
+        case 5: 
+            document.getElementById("demo").innerHTML = "Spero teniate in conto la mia candidatura presso la Vostra azienda, Porgo cordiali saluti e vi lascio al software, Riccardo";
+            counter++;
+            break;
+        default:
+            random();
+            counter++;
+    }
+    
+}
+
+function random () {
+    var ary = ["Non oggi!", "Sono Convinto di si:)", "Non è colpa tua", "Quando il duro si fa gioco... no aspetta...", "E' arrivato il tuo momento",
+    "Probabilmente no", "Lo farai sembrare facile", "Non è il caso", "Stai nel tuo...", "Nemmeno tu ci credi", "Pensaci bene...", "Le probabilità sono buone",
+    "Le probabilità sono pessime", "Sto mettendo troppe frasi per una palla 8", "Quasi sicuramente non ci riuscirai", "Non ti arrendere", "Certo che sono affidabile",
+    "Non sei normale", "Fai oggi quello che puoi fare domani", "La risposta la sai solo tu", "Ci sono un sacco di mari nei pesci", "Speriamo non sia Covid"
+    ]
+
+    function getRandomInt( min, max ) {
+        return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+    }
+    
+    items = ary.length,
+    total = items - 1,
+    index = getRandomInt( 0, total );
+
+    console.log(ary[index]);
+    document.getElementById("demo").innerHTML = ary[index];
+
+}
+
+    </script>
+</body>
+</html>
