@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex randomizer</title>
+    
+</head>
+<body style="background-image: url(https://images8.alphacoders.com/992/992724.png);  background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;">
+    
+    <h1 style="color: white; text-align: center; border: white 1px solid;">Premi il logo per avere una leggenda casuale</h1>
+    <div style="display: flex; justify-content: center; ">
+        <button type="submit">
+            <img style:="height: 250px; width: 250px;" src="https://liquipedia.net/commons/images/3/39/Apex_Legends_logo.png" id="call" alt="file not found. Premi lo stesso.">
+        </button>
+    </div>
+    <div style="display: flex; margin: auto; height: 50px; width: 100px; justify-content: center; text-align: center; border: solid black 1px; color: black; background: white; box-shadow: 0 4px 8px rgba(0 , 0, 0, 0.3);">
+        <p id="demo"></p>
+    </div>
+    <div style=" text-align: center;">
+        <p style="size: 1; color: white;">By shuriken90</p> 
+    </div>
+    <script>
+        var ask = document.getElementById("call");
+var full = document.getElementById("demo");
+
+ask.addEventListener("click", answer);
+
+function answer() {
+            random();
+    }
+
+function random () {
+    var ary = [
+        "Gibraltar","Lifeline","Pathfinder","Bloodhound","Wraith","Bangalore","Caustic",
+        "Mirage","Octane","Wattson","Crypto","Revenant","Loba","Rampart","Horizon","Fuze"
+    ]
+
+    function getRandomInt( min, max ) {
+        return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+    }
+    
+    items = ary.length,
+    total = items - 1,
+    index = getRandomInt( 0, total );
+
+    console.log(ary[index]);
+    document.getElementById("demo").innerHTML = ary[index];
+
+}
+
+    </script>
+</body>
+</html>
